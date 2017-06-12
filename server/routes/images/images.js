@@ -15,6 +15,9 @@ module.exports = {
       console.log('files', files);
       res.status(200).send(files.data);
     })
-    .catch(error => console.log('moltin fetch error', error));
+    .catch(error => {
+      console.log('moltin fetch error', error);
+      ses.status(500).send('moltin request error' + error);
+    })
   }
 };
