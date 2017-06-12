@@ -1,0 +1,27 @@
+{
+  "name": "ecommerce-mvp",
+  "version": "1.0.0",
+  "description": "Hack reactor MVP project - two days to make commerce site with products, checkout and payment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/max-hoffman/ecommerce-mvp.git"
+  },
+  "author": "Max Hoffman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/max-hoffman/ecommerce-mvp/issues"
+  },
+  "homepage": "https://github.com/max-hoffman/ecommerce-mvp#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "morgan": "^1.8.2",
+    "pg": "^6.2.4",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.1.0"
+  }
+}
