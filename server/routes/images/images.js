@@ -11,10 +11,14 @@ module.exports = {
   findAllCtrl: function(req, res) {
     Moltin.Files.All()
     .then(files => {
-      res.status(200).send(files.data);
+      var images = files.data.reduce((accum, file) => {
+        accum[file.id] = file.link.href;
+        return accum;
+      }, {});
+      res.status(200).send(images);
     })
     .catch(error => {
-      ses.status(500).send('moltin request error' + error);
+      res.status(500).send('moltin request error' + error);
     })
   }
 };

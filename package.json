@@ -19,6 +19,7 @@
   "homepage": "https://github.com/max-hoffman/ecommerce-mvp#readme",
   "dependencies": {
     "@moltin/sdk": "^2.3.0",
+    "angular": "^1.6.4",
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
