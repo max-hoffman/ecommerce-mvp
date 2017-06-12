@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/max-hoffman/ecommerce-mvp#readme",
   "dependencies": {
+    "@moltin/sdk": "^2.3.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "morgan": "^1.8.2",

@@ -1,13 +1,8 @@
-const express = require('express'),
-      morgan = require('morgan').
-      parser = require('body-parse');
+var router = require('express').Router();
+const productsRouter = require('./products');
+const stripeRouter = require('./stripe');
 
-const app = express();
+router.use('/products', productsRouter);
+router.use('/stripe', stripeRouter);
 
-//middleware
-app.require('body-parser')
-  .require('morgan');
-
-const port = 8080;
-// app.set('port', process.env.PORT || 8080);
-app.listen(port, () => console.log(`listening on port http://localhost:${8080}`));
+module.exports = router;
