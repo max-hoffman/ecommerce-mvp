@@ -13,7 +13,6 @@ module.exports = {
       res.status(200).send(products.data);
     })
     .catch(error => {
-      console.log('moltin fetch error', error);
       res.status(500).send('moltin request error:' + error);
     })
   },
@@ -23,7 +22,6 @@ module.exports = {
       res.status(200).send(product);
     })
     .catch(error => {
-      console.log('moltin fetch error', error);
       res.status(500).send('moltin request error:' + error);
     })
   },
@@ -33,7 +31,6 @@ module.exports = {
       res.status(201).send(product);
     })
     .catch(error => {
-      console.log('moltin update error', error);
       res.status(500).send('moltin request error:' + error);
     });
   },
@@ -43,7 +40,6 @@ module.exports = {
       res.status(201).send('created product', product);
     })
     .catch(error => {
-      console.log('moltin update error', error);
       res.status(500).send('moltin request error:' + error);
     });
   }

@@ -9,14 +9,11 @@ const Moltin = moltin.gateway({
 
 module.exports = {
   findAllCtrl: function(req, res) {
-    console.log('get images');
     Moltin.Files.All()
     .then(files => {
-      console.log('files', files);
       res.status(200).send(files.data);
     })
     .catch(error => {
-      console.log('moltin fetch error', error);
       ses.status(500).send('moltin request error' + error);
     })
   }
