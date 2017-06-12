@@ -1,7 +1,7 @@
-amgular.module('creepy-dolls', [])
+angular.module('creepy-dolls', [])
 
 .config([ '$sceDelegateProvider', function($sceDelegateProvider) {
-  $sceDelegateProvider.resourceWhiteList([
+  $sceDelegateProvider.resourceUrlWhitelist([
     'self',
     'https://api.moltin.com/v2/**',
     'https://api.stripe.com/**'
