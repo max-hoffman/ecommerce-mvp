@@ -2,7 +2,7 @@ var router = require('express').Router();
 const products = require('./products');
 const images = require('./images');
 
-router.get('/files', images.findAllCtrl);
+router.get('/images', images.findAllCtrl);
 
 router.get('/:id', products.findOneCtrl);
 
