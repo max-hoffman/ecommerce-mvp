@@ -9,6 +9,7 @@ const Moltin = moltin.gateway({
 
 module.exports = {
   findAllCtrl: function(req, res) {
+    console.log('get images');
     Moltin.Files.All()
     .then(files => {
       console.log('files', files);
