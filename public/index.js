@@ -1,4 +1,4 @@
-angular.module('creepy-dolls', [])
+angular.module('spooky-children', [])
 
 .config([ '$sceDelegateProvider', function($sceDelegateProvider) {
   $sceDelegateProvider.resourceUrlWhitelist([

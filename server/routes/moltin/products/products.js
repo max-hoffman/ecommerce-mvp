@@ -1,4 +1,4 @@
-const config = require('../../../config/moltin-config');
+const config = require('../../../../config/moltin-config');
 const moltin = require('@moltin/sdk');
 
 const Moltin = moltin.gateway({

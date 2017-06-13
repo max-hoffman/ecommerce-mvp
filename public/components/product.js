@@ -1,4 +1,4 @@
-angular.module('creepy-dolls')
+angular.module('spooky-children')
 
 .controller('ProductCtrl', [function() {
 
@@ -16,7 +16,10 @@ angular.module('creepy-dolls')
     },
     restrict: 'E',
     link(s, e, a, c) {
-      console.log('product controller', c);
+      Moltin.Cart.AddProduct(products.data[0].id, 3)
+      .then((item) => {
+        alert(`Added ${item.name} to your cart`);
+      });
     }
   };
 }]);

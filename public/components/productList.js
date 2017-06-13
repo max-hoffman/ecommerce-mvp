@@ -1,12 +1,7 @@
-angular.module('creepy-dolls')
+angular.module('spooky-children')
 
 .controller('ProductListCtrl', [function() {
-  this.imageUrl = (doll) => {
-    console.log('doll', doll.id);
-    console.log('images',this.images[JSON.stringify(doll.id)]);
 
-    this.images[doll.id]
-  };
 }])
 
 .directive('productList', [function() {
@@ -16,8 +11,7 @@ angular.module('creepy-dolls')
     bindToController: true,
     scope: {
       dolls: '<',
-      images: '<',
-      getUrl: '<'
+      images: '<'
     },
     restrict: 'E',
     link(s, e, a, c) {

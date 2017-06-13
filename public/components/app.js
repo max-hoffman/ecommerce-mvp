@@ -1,4 +1,4 @@
-angular.module('creepy-dolls')
+angular.module('spooky-children')
 
 .directive('app', [ function() {
   return {
