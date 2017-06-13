@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <form class="form-horizontal" role="form" ng-submit="createOrder(data)">
+  <form class="form-horizontal" role="form" ng-submit="ctrl.createOrder(ctrl.data)">
     
     <div class="row box">
       <div class="col-md-6">
@@ -25,8 +25,8 @@
           <div class="form-group" ng-repeat="field in ctrl.fields" ng-if="field.slug != 'customer'" >
             <label class="col-md-4 control-label" for="bill_{{ field.slug }}">{{ field.name }}<span class="required" ng-if="field.required">*</span></label>
             <div class="col-md-8" ng-switch on="field.type">
-              <select name="bill_{{ field.slug }}" class="form-control" ng-options="k as v for (k, v) in field.available" ng-model="data.bill[field.slug]" ng-switch-when="country"></select>
-              <input type="text" id="bill_{{ field.slug }}" ng-model="data.bill[field.slug]" class="form-control" placeholder="{{ field.name }}" ng-switch-default />
+              <select name="bill_{{ field.slug }}" class="form-control" ng-options="k as v for (k, v) in field.available" ng-model="ctrl.data.bill[field.slug]" ng-switch-when="country"></select>
+              <input type="text" id="bill_{{ field.slug }}" ng-model="ctrl.data.bill[field.slug]" class="form-control" placeholder="{{ field.name }}" ng-switch-default />
             </div>
           </div>
         </div>
@@ -35,15 +35,15 @@
         <div class="shiptobilling clearfix">
           <h3>Shipping Address</h3>
           <label class="checkbox">
-            <input type="checkbox" value="1" ng-model="data.ship_bill" onclick="jQuery('.shipping-address').toggle()" />Ship to billing address?
+            <input type="checkbox" value="1" ng-model="ctrl.data.ship_bill" onclick="jQuery('.shipping-address').toggle()" />Ship to billing address?
           </label>
         </div>
         <div class="shipping-address" style="display: block">
           <div class="form-group" ng-repeat="field in ctrl.fields" ng-if="field.slug != 'customer'" >
             <label class="col-md-4 control-label" for="ship_{{ field.slug }}">{{ field.name }} <span class="required" ng-if="field.required">*</span></label>
             <div class="col-md-8" ng-switch on="field.type">
-              <select name="ship_{{ field.slug }}" class="form-control" ng-options="k as v for (k, v) in field.available" ng-model="data.ship[field.slug]" ng-switch-when="country"></select>
-              <input type="text" id="ship_{{ field.slug }}" ng-model="data.ship[field.slug]" class="form-control" placeholder="{{ field.name }}" ng-switch-default />
+              <select name="ship_{{ field.slug }}" class="form-control" ng-options="k as v for (k, v) in field.available" ng-model="ctrl.data.ship[field.slug]" ng-switch-when="country"></select>
+              <input type="text" id="ship_{{ field.slug }}" ng-model="ctrl.data.ship[field.slug]" class="form-control" placeholder="{{ field.name }}" ng-switch-default />
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@
           <div class="row box">
             <div class="carrier" ng-repeat="carrier in ctrl.options.shipping.methods">
               <label class="radio">
-                <input type="radio" name="carrier" value="{{ carrier.slug }}" ng-model="data.shipping" checked="checked" />
+                <input type="radio" name="carrier" value="{{ carrier.slug }}" ng-model="ctrl.data.shipping" checked="checked" />
                 {{ carrier.name }}
               </label>
               <div class="carrier-{{ carrier.slug }}">
@@ -104,10 +104,10 @@
     <div class="col-md-12">
       <h3>Payment</h3>
     </div>
-    <div class="col-md-4" ng-repeat="gateway in options.gateways">
+    <div class="col-md-4" ng-repeat="gateway in ctrl.options.gateways">
       <div class="box padding">
         <label class="radio">
-          <input type="radio" name="gateway" value="{{ gateway.slug }}" ng-model="data.gateway" checked="checked" />
+          <input type="radio" name="gateway" value="{{ gateway.slug }}" ng-model="ctrl.data.gateway" checked="checked" />
           {{ gateway.name }}
         </label>
         <div class="gateway gateway-{{ gateway.slug }}">
@@ -117,6 +117,6 @@
     </div>
   </div>
 
-  <button ng-click="ctrl.onClick()" class="btn btn-primary pull-right" type="submit" style="margin: 20px 0">Proceed to Payment</button>
+  <button ng-click="ctrl.proceedToPayment()" class="btn btn-primary pull-right" type="submit" style="margin: 20px 0">Proceed to Payment</button>
 
 </form>

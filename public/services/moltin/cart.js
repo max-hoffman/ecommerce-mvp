@@ -5,7 +5,7 @@ angular.module('spooky-children')
   return {
     get: () => cart,
     fetch: () => {
-      $http.get('/cart')
+      return $http.get('/cart')
       .then(results => cart = results.data)
       .catch(error => console.log('cart fetch error', error));
     },

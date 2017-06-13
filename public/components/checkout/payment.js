@@ -1,5 +1,11 @@
 angular.module('spooky-children')
 
+.controller('PaymentCtrl', [ function() {
+  this.payment = (info) => {
+    //TODO: trigger payment here, still need to write module
+  };
+}])
+
 .directive('payment', [ function() {
   return {
     templateUrl: '../../templates/checkout/payment.html',
