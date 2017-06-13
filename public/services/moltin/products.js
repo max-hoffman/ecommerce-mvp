@@ -1,12 +1,19 @@
+var Promise = require('bluebird');
+
 angular.module('creepy-dolls')
 
-.services('products', [ '$http', function($http) {
+.service('products', [ '$http', function($http) {
   var dolls = [];
   return {
     get: () => dolls,
     fetch: () => {
-      $http.get('/products')
-      .then(results => dolls = results)
+      return $http.get('/products')
+      .then(results => {
+        return new Promise((resolve, reject) => {
+          dolls = results.data
+          resolve(dolls);
+        });
+      })
       .catch(error => console.log('product fetch error', error));
     }
   }

@@ -9,13 +9,27 @@ const Moltin = moltin.gateway({
 
 module.exports = {
   findAllCtrl: function(req, res) {
+    var images = {}; 
     Moltin.Files.All()
     .then(files => {
-      var images = files.data.reduce((accum, file) => {
+      return files.data.reduce((accum, file) => {
         accum[file.id] = file.link.href;
         return accum;
       }, {});
-      res.status(200).send(images);
+    })
+    .then(data => {
+      images = data;
+      return new Promise((resolve, reject) => {
+        Moltin.Products.All()
+        .then(dolls => resolve(dolls));
+      });
+    })
+    .then(({ data }) => {
+      var map = data.reduce((accum, doll) => {
+        accum[doll.id] = images[doll.relationships.files.data[0].id];
+        return accum;
+      }, {});
+      res.status(200).send(map);
     })
     .catch(error => {
       res.status(500).send('moltin request error' + error);

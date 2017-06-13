@@ -9,7 +9,14 @@ angular.module('creepy-dolls')
     templateUrl: '../templates/product.html',
     controller: 'ProductCtrl as ctrl',
     bindToController: true,
-    scope: {},
-    restrict: 'E'
+    scope: {
+      doll: '<',
+      imageUrl: '<',
+      onClick:'<'
+    },
+    restrict: 'E',
+    link(s, e, a, c) {
+      console.log('product controller', c);
+    }
   };
 }]);
