@@ -10,6 +10,21 @@ angular.module('spooky-children', ['ngRoute'])
   $routeProvider
     .when('/', {
       template: '<app></app>'
+    })
+    .when('/cart', {
+      template: '<cart></cart>'
+    })
+    .when('/checkout', {
+      template: '<checkout></checkout>'
+    })
+    .when('/payment', {
+      template: '<payment></payment>'
+    })
+    .when('/error', {
+      template: '<error></error>'
+    })
+    .otherwise({
+      redirectTo: '/error'
     });
 
   // var homeState = {

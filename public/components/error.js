@@ -1,9 +1,9 @@
 angular.module('spooky-children')
 
-.directive('app', [ function() {
+.directive('error', [ function() {
   return {
-    templateUrl: '../templates/app.html',
-    controller: 'AppCtrl as ctrl',
+    templateUrl: '../templates/error.html',
+    controller: 'ErrorCtrl as ctrl',
     bindToController: true,
     scope: {
     },

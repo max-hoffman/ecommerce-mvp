@@ -1,0 +1,82 @@
+<div class="row">
+        <div class="col-md-12">
+          <div class="breadcrumbs">
+            <ul class="breadcrumb">
+              <li><a href="/">Home</a> <span class="divider"></span></li>
+              <li class="active">Shopping Cart</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Shopping Cart</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="cart-info">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="image">Image</th>
+                  <th>Product</th>
+                  <th>Model</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th class="total">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="(key,product) in cart.contents">
+                  <td class="image"><img alt="{{ product.title }}" ng-src="{{ Page.image.resize(product.image, 100, 100) }}" /></td>
+                  <td class="name"><a href="/product/{{ product.slug }}">{{ product.title }}</a></td>
+                  <td>{{ product.sku }}</td>
+                  <td>{{ product.pricing.formatted.with_tax }}</td>
+                  <td class="quantity">
+                    <input type="text" size="1" value="{{ product.quantity }}" id="c_{{ key }}" name="qty[{{ key }}]" />
+                    <input type="image" title="Update" alt="Update" src="/img/update.png" ng-id="{{ key }}" ng-qty="#c_{{ key }}" cart-qty />
+                    <input type="image" title="Remove" alt="Remove" src="/img/remove.png" ng-id="{{ key }}" ng-qty="0" cart-qty />
+                  </td>
+                  <td class="total">{{ product.totals.pre_discount.formatted.with_tax }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="newsletter clearfix">
+            <div>
+              <input type="text" name="discount" class="discount" placeholder="Discount code..." />
+              <button value="apply" class="btn btn-primary">Apply</button>
+              <button value="remove" class="btn btn-primary">Remove</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="cart-totals">
+            <table class="table">
+              <tr>
+                <th>Cart Subtotal</th>
+                <td>{{ cart.totals.pre_discount.formatted.without_tax }}</td>
+              </tr>
+              <tr>
+                <th>Shipping</th>
+                <td>Free Shipping</td>
+              </tr>
+              <tr>
+                <th><span>Order Total</span></th>
+                <td>{{ cart.totals.pre_discount.formatted.with_tax }}</td>
+              </tr>					
+            </table>
+            <p>
+              <a class="btn btn-primary" href="/checkout">Proceed to Checkout</a>
+            </p>
+          </div>
+        </div>
+      </div>
