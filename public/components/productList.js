@@ -11,7 +11,8 @@ angular.module('spooky-children')
     bindToController: true,
     scope: {
       dolls: '<',
-      images: '<'
+      images: '<',
+      addToCart: '<'
     },
     restrict: 'E',
     link(s, e, a, c) {

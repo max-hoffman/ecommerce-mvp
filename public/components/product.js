@@ -12,7 +12,7 @@ angular.module('spooky-children')
     scope: {
       doll: '<',
       imageUrl: '<',
-      onClick:'<'
+      onClick:'&'
     },
     restrict: 'E',
     link(s, e, a, c) {

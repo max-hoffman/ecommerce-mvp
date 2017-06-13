@@ -4,7 +4,7 @@
     <product
       ng-repeat="doll in ctrl.dolls"
       doll="doll"
-      on-click=""
+      on-click="ctrl.addToCart(doll)"
       image-url="ctrl.images[doll.id]">
     </product>
   </div>
