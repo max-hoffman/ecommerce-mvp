@@ -8,9 +8,10 @@ const Moltin = moltin.gateway({
 
 module.exports = {
   addToCartCtrl: function(req, res) {
-    Moltin.Cart.AddProduct(re.body.id, 1)
+    console.log(req.body.id);
+    Moltin.Cart.AddProduct(req.body.id)
     .then(item => res.status(201).send(`Successfully added ${item}`))
-    .catch(error => res.status(500).send('add to cart error' + error));
+    .catch(error => res.status(500).send('add to cart error' + JSON.stringify(error)));
   },
   fetchCartCtrl: function(req, res) {
     Moltin.Cart.Items()
