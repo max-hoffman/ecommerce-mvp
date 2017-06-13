@@ -16,10 +16,7 @@ angular.module('spooky-children')
     },
     restrict: 'E',
     link(s, e, a, c) {
-      Moltin.Cart.AddProduct(products.data[0].id, 3)
-      .then((item) => {
-        alert(`Added ${item.name} to your cart`);
-      });
+      
     }
   };
 }]);

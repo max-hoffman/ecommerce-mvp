@@ -8,6 +8,7 @@ angular.module('spooky-children')
     scope: {
     },
     restrict: 'E',
+    // transclude: true,
     link(s, e, a, c) {
       console.log('app controller', c);
     }

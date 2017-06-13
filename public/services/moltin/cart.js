@@ -1,15 +1,21 @@
 angular.module('spooky-children')
 
-.service('images', [ '$http', function($http) {
-  var images = {};
-
+.service('cart', [ '$http', function($http) {
+  var cart = {};
   return {
-    get: () => images,
+    get: () => cart,
+    fetch: () => {
+      $http.get('/cart')
+      .then(results => cart = results.data)
+      .catch(error => console.log('cart fetch error', error));
+    },
     add: (doll) => {
-      Moltin.Cart.AddProduct(doll.id, 1)
-      .then((item) => {
-        alert(`Added ${item.name} to your cart`);
-      });
+      $http.post('/cart', doll)
+      .then(item => {
+        console.log('added', item);
+        fetch();
+      })
+      .catch(error => console.log('cart add error', error));
     }
   }
 }]);

@@ -5,6 +5,4 @@ router.post('/', cart.addToCartCtrl);
 
 router.get('/', cart.fetchCartCtrl);
 
-router.post('/checkout', cart.checkoutCtrl);
-
 module.exports = router;

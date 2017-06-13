@@ -17,10 +17,5 @@ module.exports = {
     Moltin.Cart.Items()
     .then(cart => res.status(200).send(cart))
     .catch(error => res.status(500).send('fetch cart error' + error));
-  },
-  checkoutCtrl: function(req, res) {
-    Moltin.Cart.Checkout(req.body)
-    .then(order => res.status(201).send(order))
-    .catch(error => res.status(500).send('fetch cart error' + error));
   }
 }
