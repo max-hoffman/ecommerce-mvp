@@ -6,6 +6,8 @@ angular.module('spooky-children')
     controller: 'PaymentCtrl as ctrl',
     bindToController: true,
     scope: {
+      order: '<',
+      data: '<'
     },
     restrict: 'E',
     link(s, e, a, c) {

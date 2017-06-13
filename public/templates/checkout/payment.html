@@ -9,13 +9,13 @@
           <div class="loginbox">
             <p>Billing Address</p>
             <ul>
-              <li>{{ order.bill_to.data.first_name }} {{ order.bill_to.data.last_name }}</li>
-              <li ng-if="order.bill_to.data.company">{{ order.bill_to.data.company }}</li>
-              <li>{{ order.bill_to.data.address_1 }}</li>
-              <li>{{ order.bill_to.data.address_2 }}</li>
-              <li>{{ order.bill_to.data.county }}</li>
-              <li>{{ order.bill_to.data.postcode }}</li>
-              <li>{{ order.bill_to.data.country.value }}</li>
+              <li>{{ ctrl.order.bill_to.data.first_name }} {{ ctrl.order.bill_to.data.last_name }}</li>
+              <li ng-if="ctrl.order.bill_to.data.company">{{ ctrl.order.bill_to.data.company }}</li>
+              <li>{{ ctrl.order.bill_to.data.address_1 }}</li>
+              <li>{{ ctrl.order.bill_to.data.address_2 }}</li>
+              <li>{{ ctrl.order.bill_to.data.county }}</li>
+              <li>{{ ctrl.order.bill_to.data.postcode }}</li>
+              <li>{{ ctrl.order.bill_to.data.country.value }}</li>
             </ul>
           </div>
         </div>
@@ -23,13 +23,13 @@
           <div class="loginbox">
             <p>Shipping Address</p>
             <ul>
-              <li>{{ order.ship_to.data.first_name }} {{ order.ship_to.data.last_name }}</li>
-              <li ng-if="order.ship_to.data.company">{{ order.ship_to.data.company }}</li>
-              <li>{{ order.ship_to.data.address_1 }}</li>
-              <li>{{ order.ship_to.data.address_2 }}</li>
-              <li>{{ order.ship_to.data.county }}</li>
-              <li>{{ order.ship_to.data.postcode }}</li>
-              <li>{{ order.ship_to.data.country.value }}</li>
+              <li>{{ ctrl.order.ship_to.data.first_name }} {{ ctrl.order.ship_to.data.last_name }}</li>
+              <li ng-if="ctrl.order.ship_to.data.company">{{ ctrl.order.ship_to.data.company }}</li>
+              <li>{{ ctrl.order.ship_to.data.address_1 }}</li>
+              <li>{{ ctrl.order.ship_to.data.address_2 }}</li>
+              <li>{{ ctrl.order.ship_to.data.county }}</li>
+              <li>{{ ctrl.order.ship_to.data.postcode }}</li>
+              <li>{{ ctrl.order.ship_to.data.country.value }}</li>
             </ul>
           </div>
         </div>
@@ -39,36 +39,36 @@
             <div class="form-group">
               <label class="control-label col-md-4" for="card">Card Number <span class="required">*</span></label>
               <div class="col-md-8">
-                <input class="form-control" id="card" ng-model="data.number" type="text" card-format />
+                <input class="form-control" id="card" ng-model="ctrl.data.number" type="text" card-format />
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-4" for="expiry_month">Expiry Date <span class="required">*</span></label>
               <div class="col-md-4">
-                <input class="form-control" id="expiry_month" ng-model="data.expiry_month" type="text" placeholder="DD" />
+                <input class="form-control" id="expiry_month" ng-model="ctrl.data.expiry_month" type="text" placeholder="DD" />
               </div>
               <div class="col-md-4">
-                <input class="form-control" id="expiry_year" ng-model="data.expiry_year" type="text" placeholder="YYYY" />
+                <input class="form-control" id="expiry_year" ng-model="ctrl.data.expiry_year" type="text" placeholder="YYYY" />
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-4" for="start_month">Start Date</label>
               <div class="col-md-4">
-                <input class="form-control" id="start_month" ng-model="data.start_month" type="text" placeholder="DD" />
+                <input class="form-control" id="start_month" ng-model="ctrl.data.start_month" type="text" placeholder="DD" />
               </div>
               <div class="col-md-4">
-                <input class="form-control" id="start_year" ng-model="data.start_year" type="text" placeholder="YYYY" />
+                <input class="form-control" id="start_year" ng-model="ctrl.data.start_year" type="text" placeholder="YYYY" />
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-4" for="cv2">CV2 <span class="required">*</span></label>
               <div class="col-md-4">
-                <input class="form-control" id="cv2" ng-model="data.cvv" type="text" />
+                <input class="form-control" id="cv2" ng-model="ctrl.data.cvv" type="text" />
               </div>
             </div>
             <div class="form-group">
               <div class="col-md-12">
-                <button class="btn btn-primary" type="button" ng-click="payment(data)">Pay</button>
+                <button class="btn btn-primary" type="button" ng-click="payment(ctrl.data)">Pay</button>
               </div>
             </div>
           </form>

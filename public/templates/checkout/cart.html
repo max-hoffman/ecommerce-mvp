@@ -2,7 +2,7 @@
         <div class="col-md-12">
           <div class="breadcrumbs">
             <ul class="breadcrumb">
-              <li><a href="/">Home</a> <span class="divider"></span></li>
+              <li><a href="#!/">Home</a> <span class="divider"></span></li>
               <li class="active">Shopping Cart</li>
             </ul>
           </div>
@@ -30,9 +30,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="(key,product) in cart.contents">
+                <tr ng-repeat="(key,product) in ctrl.cart.contents">
                   <td class="image"><img alt="{{ product.title }}" ng-src="{{ Page.image.resize(product.image, 100, 100) }}" /></td>
-                  <td class="name"><a href="/product/{{ product.slug }}">{{ product.title }}</a></td>
+                  <td class="name"><a href="/#!product/{{ product.slug }}">{{ product.title }}</a></td>
                   <td>{{ product.sku }}</td>
                   <td>{{ product.pricing.formatted.with_tax }}</td>
                   <td class="quantity">
@@ -63,7 +63,7 @@
             <table class="table">
               <tr>
                 <th>Cart Subtotal</th>
-                <td>{{ cart.totals.pre_discount.formatted.without_tax }}</td>
+                <td>{{ ctrl.cart.totals.pre_discount.formatted.without_tax }}</td>
               </tr>
               <tr>
                 <th>Shipping</th>
@@ -71,11 +71,11 @@
               </tr>
               <tr>
                 <th><span>Order Total</span></th>
-                <td>{{ cart.totals.pre_discount.formatted.with_tax }}</td>
+                <td>{{ ctrl.cart.totals.pre_discount.formatted.with_tax }}</td>
               </tr>					
             </table>
             <p>
-              <a class="btn btn-primary" href="/checkout">Proceed to Checkout</a>
+              <a class="btn btn-primary" href="/#!checkout">Proceed to Checkout</a>
             </p>
           </div>
         </div>

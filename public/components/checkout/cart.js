@@ -6,6 +6,7 @@ angular.module('spooky-children')
     controller: 'CartCtrl as ctrl',
     bindToController: true,
     scope: {
+      cart: '<'
     },
     restrict: 'E',
     link(s, e, a, c) {
