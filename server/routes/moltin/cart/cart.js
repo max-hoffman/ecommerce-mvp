@@ -8,8 +8,9 @@ const Moltin = moltin.gateway({
 
 module.exports = {
   addToCartCtrl: function(req, res) {
-    console.log(req.body.id);
-    Moltin.Cart.AddProduct(req.body.id)
+    console.log('add to cart id', req.body.id);
+    // console.log('molin add product fn', Moltin.Cart.AddProduct);
+    Moltin.Cart.AddProduct("7fb75b17-7c96-483a-8538-653a889f897d", 1)
     .then(item => res.status(201).send(`Successfully added ${item}`))
     .catch(error => res.status(500).send('add to cart error' + JSON.stringify(error)));
   },

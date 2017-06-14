@@ -37,8 +37,8 @@
                   <td>{{ product.pricing.formatted.with_tax }}</td>
                   <td class="quantity">
                     <input type="text" size="1" value="{{ product.quantity }}" id="c_{{ key }}" name="qty[{{ key }}]" />
-                    <input type="image" title="Update" alt="Update" src="/img/update.png" ng-id="{{ key }}" ng-qty="#c_{{ key }}" cart-qty />
-                    <input type="image" title="Remove" alt="Remove" src="/img/remove.png" ng-id="{{ key }}" ng-qty="0" cart-qty />
+                    <input type="image" title="Update" alt="Update" ng-id="{{ key }}" ng-qty="#c_{{ key }}" cart-qty />
+                    <input type="image" title="Remove" alt="Remove" ng-id="{{ key }}" ng-qty="0" cart-qty />
                   </td>
                   <td class="total">{{ product.totals.pre_discount.formatted.with_tax }}</td>
                 </tr>

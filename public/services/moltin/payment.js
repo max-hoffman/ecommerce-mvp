@@ -5,12 +5,12 @@
   //   .catch(error => res.status(500).send('fetch cart error' + error));
   // },
 
-  var moltin = new Moltin({publicId: 'YOUR_PUBLIC_API_KEY', notice: function(type, msg) { $('<div class="'+type+'">'+msg+'</div>').prependTo($('body')); } });
-      moltin.Authenticate(function() {
-        $('<div class="success">Authentication successful</div>').prependTo($('body'));
-        $('.ready').show();
-        // API calls here...
-      });
+  // var moltin = new Moltin({publicId: 'YOUR_PUBLIC_API_KEY', notice: function(type, msg) { $('<div class="'+type+'">'+msg+'</div>').prependTo($('body')); } });
+  //     moltin.Authenticate(function() {
+  //       $('<div class="success">Authentication successful</div>').prependTo($('body'));
+  //       $('.ready').show();
+  //       // API calls here...
+  //     });
 
       //TODO: Authenticate to connect to moltin in front end with public key
       //TODO: create method that takes payment details, and posts to moltin's api (not mine)
